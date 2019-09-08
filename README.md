@@ -1,2 +1,3 @@
 # RN-spotifyClone
-This project is for the practice of react-native. RocketSeat
+
+Project created for RN practice. Rockeseat Bootcamp Exercise
