@@ -44,7 +44,7 @@ class Main extends Component {
           data={podcasts.data}
           keyExtractor={podcast => String(podcast.id)}
           renderItem={({item: podcast}) => (
-            <Podcast onPress={() => {}}>
+            <Podcast onPress={() => this.handlePodcastPress(podcast)}>
               <Cover source={{uri: podcast.cover}} />
               <Info>
                 <Title>{podcast.title}</Title>
