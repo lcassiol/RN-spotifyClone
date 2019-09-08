@@ -33,7 +33,7 @@ class Main extends Component {
   };
 
   render() {
-    const {podcasts} = this.props;
+    const {podcasts, currentPodCast} = this.props;
 
     console.log(['podcasts', podcasts]);
 
@@ -47,7 +47,10 @@ class Main extends Component {
             <Podcast onPress={() => this.handlePodcastPress(podcast)}>
               <Cover source={{uri: podcast.cover}} />
               <Info>
-                <Title>{podcast.title}</Title>
+                <Title
+                  active={currentPodCast && currentPodCast.id === podcast.id}>
+                  {podcast.title}
+                </Title>
                 <Count>{`${podcast.tracks.length} episódios`}</Count>
               </Info>
             </Podcast>
@@ -60,6 +63,7 @@ class Main extends Component {
 
 const mapStateToProps = state => ({
   podcasts: state.podcasts,
+  currentPodCast: state.player.podcast ? state.player.podcast : null,
 });
 
 const mapDispatchToProps = dispatch =>

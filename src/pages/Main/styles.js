@@ -42,7 +42,7 @@ export const Info = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: #fff;
+  color: ${({active}) => (active ? '#1db954' : '#FFF')};
   font-size: 18px;
   font-weight: bold;
 `;
